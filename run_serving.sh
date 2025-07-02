@@ -1,0 +1,1 @@
+nohup gunicorn -w 8 --bind 0.0.0.0:8000 llm_build_serving:app > log.txt 2>&1 &
