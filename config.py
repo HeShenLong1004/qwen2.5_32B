@@ -2,7 +2,7 @@ import json
 import logging
 
 api_key = 'EMPTY'
-llm_model_name = 'qwen-plus'#qwen-plus-latest
+llm_model_name = '/data/maxin/Qwen2.5-32B-Instruct'#qwen-plus-latest
 dashscope_url = 'http://36.213.210.39:8000/v1'
 
 skill_name = {'新闻':'news','天气':'weather','日历':'calendar','亲戚关系计算':'relation_computation','笑话':'joke','单位换算':'unit_conversion','节假日查询':'holiday_query','交通限行':'traffic_control','计算器':'calculator','翻译':'translate','音乐':'music','儿歌':'children_song','电台':'network_broadcasting_station','有声书':'talking_book','故障':'feedback'}
