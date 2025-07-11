@@ -444,6 +444,15 @@ def main(dn, input_text, ip_address, city, open_migu, history, unique_id, seq_id
         logger.info(f'log id:{unique_id},seq id:{seq_id}。用户dn：{dn}，缓存没命中，请求用户数据接口。用户数据查询耗时：{end4 - start4}s')
     logger.info(f'log id:{unique_id},seq id:{seq_id}。用户设备信息：{json.dumps(user_data.to_dict("records"), ensure_ascii=False)}')
 
+    try:
+        regex_result = try_regex_rules(dn, input_text)
+    except Exception as e:
+        logger.error(f'log id:{unique_id},seq id:{seq_id}。regex rule error：{str(e)}')
+        regex_result = None
+    if regex_result:
+        return regex_result
+        
+
     # Start scene list retrieval for scene_instruct
     scene_start = time.time()
     try:
